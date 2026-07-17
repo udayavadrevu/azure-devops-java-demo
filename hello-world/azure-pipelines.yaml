@@ -13,3 +13,9 @@ steps:
   inputs:
     mavenPomFile: 'hello-world/pom.xml'
     goals: 'clean package'
+
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish JAR Artifact'
+  inputs:
+    targetPath: 'hello-world/target'
+    artifact: 'drop'
